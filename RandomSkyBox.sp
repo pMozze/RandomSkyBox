@@ -9,7 +9,7 @@ public Plugin myinfo = {
 	name = "Random SkyBox",
 	author = "Mozze",
 	description = "",
-	version = "",
+	version = "1.1",
 	url = "t.me/pMozze"
 };
 
@@ -48,7 +48,7 @@ public void OnMapStart() {
 		char filePath[PLATFORM_MAX_PATH];
   		FileType fileType;
 
-		while (directoryListing.GetNext(filePath, sizeof(filePath), fileType) && fileType == FileType_File) {
+		while (directoryListing.GetNext(filePath, sizeof(filePath), fileType)) {
 			Format(filePath, sizeof(filePath), "materials/skybox/%s", filePath);
 			AddFileToDownloadsTable(filePath);
 		}
